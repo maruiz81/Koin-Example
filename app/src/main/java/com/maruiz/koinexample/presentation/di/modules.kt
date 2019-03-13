@@ -12,13 +12,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 val appModule = module {
     single {
         Retrofit.Builder()
-            .baseUrl(getProperty<String>("base_url"))
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+                .baseUrl(getProperty<String>("base_url"))
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
     }
-
     single { get<Retrofit>().create(BookApi::class.java) }
     single { GetBooks(get()) }
-    single { BooksAdapter() }
+    factory { BooksAdapter() }
     viewModel { BooksViewModel(get()) }
 }

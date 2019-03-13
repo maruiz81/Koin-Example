@@ -29,7 +29,7 @@ class BooksAdapter : RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
             itemView.image.loadImage(model.image)
             itemView.title.text = model.title
             itemView.author.text = model.author
-            itemView.synopsis.text = model.shortSynopis
+            itemView.synopsis.text = model.shortSynopsis
         }
     }
 }
